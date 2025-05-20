@@ -1,0 +1,43 @@
+---
+layout: default
+title: 上传新词条
+---
+<div class="container">
+  <h1>上传新词条</h1>
+  
+  <form id="upload-form" class="upload-form">
+    <div class="form-group">
+      <label for="title">词条标题：</label>
+      <input type="text" id="title" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="initial">首字母：</label>
+      <select id="initial" required>
+        {% for letter in (65..90) | map: 'chr' %}
+          <option value="{{ letter }}">{{ letter }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="content">文字介绍：</label>
+      <textarea id="content" rows="5" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="image">图片链接：</label>
+      <input type="url" id="image">
+    </div>
+    
+    <div class="form-group">
+      <label for="video">视频链接：</label>
+      <input type="url" id="video">
+    </div>
+    
+    <button type="submit" id="submit-btn">提交</button>
+    <div id="status-message" class="status-message"></div>
+  </form>
+</div>
+
+<script src="/assets/js/upload.js"></script>
