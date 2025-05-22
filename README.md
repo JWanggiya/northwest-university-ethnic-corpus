@@ -1,1 +1,0 @@
-# northwest-university-ethnic-corpus
